@@ -1,0 +1,19 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server_audit
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourSecurePassword123  # Cambia esta contraseña por una más segura
+      - MSSQL_AGENT_ENABLED=true  # Habilitar el Agente de SQL Server para auditoría
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql/data
+      - sql_audit:/var/opt/mssql/audit  # Montaje de la carpeta de auditoría
+    restart: always
+    user: root  # Ejecuta el contenedor como root
+
+volumes:
+  sql_data:
+  sql_audit:
