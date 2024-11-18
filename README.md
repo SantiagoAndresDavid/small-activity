@@ -18,6 +18,7 @@ A continuación se detalla el significado de los campos más comunes que aparece
   - `FAI`: Intento de inicio de sesión fallido.
   - `AUSC`: Cambios o configuraciones en la auditoría.
   - `SC`: Cambio de estructura en la base de datos.
+  - `LX`: se refieren a intentos de inicio de sesión (exitosos o fallidos)  
 
 - **succeeded**:  
   Indica si la acción fue exitosa (`true`) o fallida (`false`). Este campo es particularmente útil para eventos como intentos de inicio de sesión.
