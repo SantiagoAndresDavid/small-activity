@@ -1,0 +1,15 @@
+﻿services:
+  postgres:
+    image: postgres:15 # Imagen oficial de PostgreSQL
+    container_name: postgres_container # Nombre del contenedor
+    ports:
+      - "5432:5432" # Mapea el puerto 5432 del contenedor al host
+    environment:
+      POSTGRES_USER: myuser # Usuario de la base de datos
+      POSTGRES_PASSWORD: mypassword # Contraseña del usuario
+      POSTGRES_DB: mydatabase # Base de datos inicial
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Volumen para persistir los datos
+
+volumes:
+  postgres_data:
